@@ -1,223 +1,386 @@
-import { motion } from "framer-motion";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaReact,
-  FaPython,
-  FaNodeJs,
-} from "react-icons/fa";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shivansh Portfolio</title>
 
-import {
-  SiJavascript,
-  SiTailwindcss,
-  SiMongodb,
-} from "react-icons/si";
+  <style>
 
-export default function App() {
-  return (
-    <div className="bg-black text-white min-h-screen font-sans">
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
 
-      {/* HERO SECTION */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    body{
+      background:#0a0a0a;
+      color:white;
+      overflow-x:hidden;
+    }
 
-        <motion.h1
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold mb-4"
-        >
-          Shivansh Shukla
-        </motion.h1>
+    html{
+      scroll-behavior:smooth;
+    }
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-xl text-gray-400 max-w-2xl"
-        >
-          B.Tech CSE (AI & ML) Student | Software Developer |
-          React Developer | AI/ML Enthusiast
-        </motion.p>
+    nav{
+      width:100%;
+      padding:20px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      background:rgba(0,0,0,0.7);
+      backdrop-filter:blur(10px);
+      z-index:1000;
+    }
 
-        <div className="flex gap-6 mt-8 text-3xl">
-          <a
-            href="https://github.com/"
-            target="_blank"
-          >
-            <FaGithub className="hover:text-gray-400 transition" />
-          </a>
+    nav h1{
+      font-size:28px;
+      color:#00ffd5;
+    }
 
-          <a
-            href="https://linkedin.com/"
-            target="_blank"
-          >
-            <FaLinkedin className="hover:text-blue-400 transition" />
-          </a>
-        </div>
+    nav ul{
+      display:flex;
+      gap:25px;
+      list-style:none;
+    }
 
-        <a
-          href="/resume.pdf"
-          download
-          className="mt-10 px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-300 transition"
-        >
-          Download Resume
-        </a>
-      </section>
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+    }
 
-      {/* ABOUT */}
-      <section className="py-20 px-8 max-w-6xl mx-auto">
+    nav ul li a:hover{
+      color:#00ffd5;
+    }
 
-        <h2 className="text-4xl font-bold mb-10">
-          About Me
-        </h2>
+    .hero{
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
 
-        <p className="text-gray-400 text-lg leading-8">
-          I am a Computer Science student specializing in Artificial Intelligence and Machine Learning.
-          Passionate about software development, scalable systems, and modern web technologies.
-          I have worked on fintech internship projects and built community-based platforms.
-        </p>
-      </section>
+    .hero h2{
+      font-size:70px;
+      margin-bottom:20px;
+    }
 
-      {/* SKILLS */}
-      <section className="py-20 px-8 bg-zinc-900">
+    .hero span{
+      color:#00ffd5;
+    }
 
-        <div className="max-w-6xl mx-auto">
+    .hero p{
+      max-width:700px;
+      color:#bdbdbd;
+      font-size:20px;
+      line-height:1.7;
+    }
 
-          <h2 className="text-4xl font-bold mb-12">
-            Skills
-          </h2>
+    .btns{
+      margin-top:35px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+    .btn{
+      padding:14px 28px;
+      background:#00ffd5;
+      color:black;
+      text-decoration:none;
+      border-radius:40px;
+      font-weight:bold;
+      transition:0.3s;
+    }
 
-            <div className="bg-black p-6 rounded-2xl shadow-lg">
-              <FaReact className="text-5xl mb-4 text-cyan-400" />
-              <h3 className="text-xl font-semibold">React.js</h3>
-            </div>
+    .btn:hover{
+      transform:scale(1.05);
+    }
 
-            <div className="bg-black p-6 rounded-2xl shadow-lg">
-              <FaPython className="text-5xl mb-4 text-yellow-400" />
-              <h3 className="text-xl font-semibold">Python</h3>
-            </div>
+    section{
+      padding:100px 10%;
+    }
 
-            <div className="bg-black p-6 rounded-2xl shadow-lg">
-              <FaNodeJs className="text-5xl mb-4 text-green-500" />
-              <h3 className="text-xl font-semibold">Node.js</h3>
-            </div>
+    .title{
+      font-size:45px;
+      margin-bottom:50px;
+      color:#00ffd5;
+    }
 
-            <div className="bg-black p-6 rounded-2xl shadow-lg">
-              <SiJavascript className="text-5xl mb-4 text-yellow-300" />
-              <h3 className="text-xl font-semibold">JavaScript</h3>
-            </div>
+    .about p{
+      font-size:20px;
+      line-height:1.8;
+      color:#cfcfcf;
+    }
 
-            <div className="bg-black p-6 rounded-2xl shadow-lg">
-              <SiTailwindcss className="text-5xl mb-4 text-cyan-300" />
-              <h3 className="text-xl font-semibold">Tailwind CSS</h3>
-            </div>
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
 
-            <div className="bg-black p-6 rounded-2xl shadow-lg">
-              <SiMongodb className="text-5xl mb-4 text-green-400" />
-              <h3 className="text-xl font-semibold">MongoDB</h3>
-            </div>
+    .skill-card{
+      background:#151515;
+      padding:30px;
+      border-radius:20px;
+      transition:0.3s;
+      border:1px solid #222;
+    }
 
-          </div>
-        </div>
-      </section>
+    .skill-card:hover{
+      transform:translateY(-8px);
+      border-color:#00ffd5;
+    }
 
-      {/* EXPERIENCE */}
-      <section className="py-20 px-8 max-w-6xl mx-auto">
+    .skill-card h3{
+      margin-bottom:15px;
+      font-size:24px;
+    }
 
-        <h2 className="text-4xl font-bold mb-12">
-          Experience
-        </h2>
+    .skill-card p{
+      color:#bcbcbc;
+      line-height:1.6;
+    }
 
-        <div className="space-y-8">
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
 
-          <div className="border border-zinc-800 p-6 rounded-2xl">
-            <h3 className="text-2xl font-semibold">
-              Software Developer Intern — Bluestock Fintech
-            </h3>
+    .project-card{
+      background:#151515;
+      padding:30px;
+      border-radius:20px;
+      border:1px solid #222;
+      transition:0.3s;
+    }
 
-            <p className="text-gray-400 mt-3">
-              Worked on modular fintech applications, scalability improvements,
-              and feature optimization.
-            </p>
-          </div>
+    .project-card:hover{
+      transform:translateY(-10px);
+      border-color:#00ffd5;
+    }
 
-          <div className="border border-zinc-800 p-6 rounded-2xl">
-            <h3 className="text-2xl font-semibold">
-              Founder Developer — Oryzene Esports
-            </h3>
+    .project-card h3{
+      margin-bottom:15px;
+      font-size:28px;
+    }
 
-            <p className="text-gray-400 mt-3">
-              Built and deployed an esports networking platform with scalable architecture.
-            </p>
-          </div>
+    .project-card p{
+      color:#c4c4c4;
+      line-height:1.7;
+    }
 
-        </div>
-      </section>
+    .contact{
+      text-align:center;
+    }
 
-      {/* PROJECTS */}
-      <section className="py-20 px-8 bg-zinc-900">
+    .contact h2{
+      margin-bottom:25px;
+    }
 
-        <div className="max-w-6xl mx-auto">
+    .contact p{
+      font-size:22px;
+      margin-bottom:12px;
+      color:#c9c9c9;
+    }
 
-          <h2 className="text-4xl font-bold mb-12">
-            Projects
-          </h2>
+    footer{
+      text-align:center;
+      padding:30px;
+      border-top:1px solid #222;
+      color:#8d8d8d;
+    }
 
-          <div className="grid md:grid-cols-2 gap-8">
+    @media(max-width:768px){
 
-            <div className="bg-black p-8 rounded-2xl">
-              <h3 className="text-2xl font-semibold mb-4">
-                Bayesian Network Implementation
-              </h3>
+      .hero h2{
+        font-size:45px;
+      }
 
-              <p className="text-gray-400">
-                Developed probabilistic models using Bayesian Networks in Python.
-              </p>
-            </div>
+      nav{
+        padding:20px;
+      }
 
-            <div className="bg-black p-8 rounded-2xl">
-              <h3 className="text-2xl font-semibold mb-4">
-                Candidate Elimination Algorithm
-              </h3>
+      nav ul{
+        gap:12px;
+      }
 
-              <p className="text-gray-400">
-                Implemented machine learning hypothesis refinement techniques.
-              </p>
-            </div>
+      .title{
+        font-size:35px;
+      }
 
-            <div className="bg-black p-8 rounded-2xl">
-              <h3 className="text-2xl font-semibold mb-4">
-                Socket Programming
-              </h3>
+    }
 
-              <p className="text-gray-400">
-                Built HTTP client-server communication using sockets.
-              </p>
-            </div>
+  </style>
+</head>
 
-          </div>
-        </div>
-      </section>
+<body>
 
-      {/* CONTACT */}
-      <section className="py-20 px-8 text-center">
+  <!-- NAVBAR -->
 
-        <h2 className="text-4xl font-bold mb-8">
-          Contact
-        </h2>
+  <nav>
+    <h1>Shivansh</h1>
 
-        <p className="text-gray-400 text-lg">
-          shivanshshukla8948@gmail.com
-        </p>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-        <p className="text-gray-400 mt-2">
-          Kanpur, Uttar Pradesh
-        </p>
+  <!-- HERO -->
 
-      </section>
+  <section class="hero">
+
+    <h2>Hi, I'm <span>Shivansh Shukla</span></h2>
+
+    <p>
+      B.Tech CSE (AI & ML) Student | Software Developer |
+      React Developer | AI/ML Enthusiast
+    </p>
+
+    <div class="btns">
+
+      <a href="resume.pdf" class="btn" download>
+        Download Resume
+      </a>
+
+      <a href="https://linkedin.com" class="btn">
+        LinkedIn
+      </a>
+
+      <a href="https://github.com" class="btn">
+        GitHub
+      </a>
 
     </div>
-  );
-}
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <h2 class="title">About Me</h2>
+
+    <p>
+      I am a Computer Science student specializing in Artificial Intelligence
+      and Machine Learning. Passionate about software development,
+      scalable systems, and modern web technologies.
+      I have experience in fintech internship projects,
+      frontend development, and community platform building.
+    </p>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <h2 class="title">Skills</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <h3>Frontend</h3>
+        <p>React.js, HTML, CSS, JavaScript, Responsive Design</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Backend</h3>
+        <p>Node.js, REST APIs, Express.js</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>Programming</h3>
+        <p>Python, C, C++, Java</p>
+      </div>
+
+      <div class="skill-card">
+        <h3>AI/ML</h3>
+        <p>Machine Learning, Neural Networks, Scikit-learn</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <h2 class="title">Projects</h2>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <h3>Bayesian Network</h3>
+
+        <p>
+          Developed probabilistic models using Bayesian Networks in Python
+          with inference logic and prediction systems.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Candidate Elimination</h3>
+
+        <p>
+          Implemented machine learning hypothesis refinement techniques
+          using training datasets.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Socket Programming</h3>
+
+        <p>
+          Built HTTP client-server communication systems using socket programming.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Oryzene Esports</h3>
+
+        <p>
+          Designed and deployed an esports community networking platform
+          with scalable architecture.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <h2 class="title">Contact</h2>
+
+    <p>Email: shivanshshukla8948@gmail.com</p>
+
+    <p>Location: Kanpur, Uttar Pradesh</p>
+
+    <p>Phone: +91-6387772010</p>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Shivansh Shukla | Portfolio Website
+  </footer>
+
+</body>
+</html>
