@@ -1,0 +1,223 @@
+import { motion } from "framer-motion";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaReact,
+  FaPython,
+  FaNodeJs,
+} from "react-icons/fa";
+
+import {
+  SiJavascript,
+  SiTailwindcss,
+  SiMongodb,
+} from "react-icons/si";
+
+export default function App() {
+  return (
+    <div className="bg-black text-white min-h-screen font-sans">
+
+      {/* HERO SECTION */}
+      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6">
+
+        <motion.h1
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-7xl font-bold mb-4"
+        >
+          Shivansh Shukla
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="text-xl text-gray-400 max-w-2xl"
+        >
+          B.Tech CSE (AI & ML) Student | Software Developer |
+          React Developer | AI/ML Enthusiast
+        </motion.p>
+
+        <div className="flex gap-6 mt-8 text-3xl">
+          <a
+            href="https://github.com/"
+            target="_blank"
+          >
+            <FaGithub className="hover:text-gray-400 transition" />
+          </a>
+
+          <a
+            href="https://linkedin.com/"
+            target="_blank"
+          >
+            <FaLinkedin className="hover:text-blue-400 transition" />
+          </a>
+        </div>
+
+        <a
+          href="/resume.pdf"
+          download
+          className="mt-10 px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-gray-300 transition"
+        >
+          Download Resume
+        </a>
+      </section>
+
+      {/* ABOUT */}
+      <section className="py-20 px-8 max-w-6xl mx-auto">
+
+        <h2 className="text-4xl font-bold mb-10">
+          About Me
+        </h2>
+
+        <p className="text-gray-400 text-lg leading-8">
+          I am a Computer Science student specializing in Artificial Intelligence and Machine Learning.
+          Passionate about software development, scalable systems, and modern web technologies.
+          I have worked on fintech internship projects and built community-based platforms.
+        </p>
+      </section>
+
+      {/* SKILLS */}
+      <section className="py-20 px-8 bg-zinc-900">
+
+        <div className="max-w-6xl mx-auto">
+
+          <h2 className="text-4xl font-bold mb-12">
+            Skills
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+
+            <div className="bg-black p-6 rounded-2xl shadow-lg">
+              <FaReact className="text-5xl mb-4 text-cyan-400" />
+              <h3 className="text-xl font-semibold">React.js</h3>
+            </div>
+
+            <div className="bg-black p-6 rounded-2xl shadow-lg">
+              <FaPython className="text-5xl mb-4 text-yellow-400" />
+              <h3 className="text-xl font-semibold">Python</h3>
+            </div>
+
+            <div className="bg-black p-6 rounded-2xl shadow-lg">
+              <FaNodeJs className="text-5xl mb-4 text-green-500" />
+              <h3 className="text-xl font-semibold">Node.js</h3>
+            </div>
+
+            <div className="bg-black p-6 rounded-2xl shadow-lg">
+              <SiJavascript className="text-5xl mb-4 text-yellow-300" />
+              <h3 className="text-xl font-semibold">JavaScript</h3>
+            </div>
+
+            <div className="bg-black p-6 rounded-2xl shadow-lg">
+              <SiTailwindcss className="text-5xl mb-4 text-cyan-300" />
+              <h3 className="text-xl font-semibold">Tailwind CSS</h3>
+            </div>
+
+            <div className="bg-black p-6 rounded-2xl shadow-lg">
+              <SiMongodb className="text-5xl mb-4 text-green-400" />
+              <h3 className="text-xl font-semibold">MongoDB</h3>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* EXPERIENCE */}
+      <section className="py-20 px-8 max-w-6xl mx-auto">
+
+        <h2 className="text-4xl font-bold mb-12">
+          Experience
+        </h2>
+
+        <div className="space-y-8">
+
+          <div className="border border-zinc-800 p-6 rounded-2xl">
+            <h3 className="text-2xl font-semibold">
+              Software Developer Intern — Bluestock Fintech
+            </h3>
+
+            <p className="text-gray-400 mt-3">
+              Worked on modular fintech applications, scalability improvements,
+              and feature optimization.
+            </p>
+          </div>
+
+          <div className="border border-zinc-800 p-6 rounded-2xl">
+            <h3 className="text-2xl font-semibold">
+              Founder Developer — Oryzene Esports
+            </h3>
+
+            <p className="text-gray-400 mt-3">
+              Built and deployed an esports networking platform with scalable architecture.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section className="py-20 px-8 bg-zinc-900">
+
+        <div className="max-w-6xl mx-auto">
+
+          <h2 className="text-4xl font-bold mb-12">
+            Projects
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+
+            <div className="bg-black p-8 rounded-2xl">
+              <h3 className="text-2xl font-semibold mb-4">
+                Bayesian Network Implementation
+              </h3>
+
+              <p className="text-gray-400">
+                Developed probabilistic models using Bayesian Networks in Python.
+              </p>
+            </div>
+
+            <div className="bg-black p-8 rounded-2xl">
+              <h3 className="text-2xl font-semibold mb-4">
+                Candidate Elimination Algorithm
+              </h3>
+
+              <p className="text-gray-400">
+                Implemented machine learning hypothesis refinement techniques.
+              </p>
+            </div>
+
+            <div className="bg-black p-8 rounded-2xl">
+              <h3 className="text-2xl font-semibold mb-4">
+                Socket Programming
+              </h3>
+
+              <p className="text-gray-400">
+                Built HTTP client-server communication using sockets.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section className="py-20 px-8 text-center">
+
+        <h2 className="text-4xl font-bold mb-8">
+          Contact
+        </h2>
+
+        <p className="text-gray-400 text-lg">
+          shivanshshukla8948@gmail.com
+        </p>
+
+        <p className="text-gray-400 mt-2">
+          Kanpur, Uttar Pradesh
+        </p>
+
+      </section>
+
+    </div>
+  );
+}
